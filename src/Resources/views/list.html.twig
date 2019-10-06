@@ -1,0 +1,12 @@
+
+
+{% extends 'kookaburra.html.twig' %}
+
+{% set moduleName = 'Roll Groups' %}
+{% set module = {'baseURL': 'roll_groups', 'crumbs': [{uri: 'roll_groups__list', name: 'Roll Groups'}],  'title': 'View Roll Groups'} %}
+{% set breadcrumbs = 'new' %}
+
+{% block content %}
+    <p>{{ 'This page shows all roll groups in the current school year.'|trans }}</p>
+    {% include 'default/table_view.html.twig' %}
+{% endblock content %}

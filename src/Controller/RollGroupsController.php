@@ -16,9 +16,7 @@ use App\Entity\Person;
 use App\Entity\RollGroup;
 use App\Entity\SchoolYear;
 use App\Form\Modules\RollGroups\DetailStudentSortType;
-use App\Manager\Module\RollGroup\RollGroupTable;
 use App\Provider\ProviderFactory;
-use App\Twig\MinorLinks;
 use App\Twig\Sidebar;
 use App\Twig\TableViewManager;
 use Kookaburra\UserAdmin\Util\SecurityHelper;
@@ -58,7 +56,7 @@ class RollGroupsController extends AbstractController
         $table->addColumn('website', 'Website')->setHeadClass('column hidden md:table-cell')->setBodyClass('p-2 sm:p-3 hidden md:table-cell');
         $table->addColumn('actionColumn', 'Actions')->setBodyClass('content-centre')->setHeadClass('content-centre')->setStyle("width: '1%'")->addAction('View', 'view', 'roll_groups__detail', ['rollGroup' => 'Id']);
 
-        return $this->render('modules/roll_groups/list.html.twig',
+        return $this->render('@KookaburraRollGroup/list.html.twig',
             [
                 'table_data' => $rollGroups,
                 'table' => $table,
@@ -95,7 +93,7 @@ class RollGroupsController extends AbstractController
         $form = $this->createForm(DetailStudentSortType::class, $sortBy);
         $form->handleRequest($request);
 
-        return $this->render('modules/roll_groups/details.html.twig',
+        return $this->render('@KookaburraRollGroup/details.html.twig',
             [
                 'rollGroup' => $rollGroup,
                 'staffView' => SecurityHelper::isActionAccessible('/modules/Staff/staff_view_details.php'),

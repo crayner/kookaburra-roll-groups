@@ -1,0 +1,15 @@
+<script type="application/javascript" lang="js">
+    function toggleConfidential() {
+        var x = document.getElementById("detail_student_sort_confidential").checked
+        var ele = document.getElementsByClassName('confidential')
+        if (x) {
+            for (var i = 0; i < ele.length; i++ ) {
+                ele[i].style.display = "block";
+            }
+        } else {
+            for (var i = 0; i < ele.length; i++ ) {
+                ele[i].style.display = "none";
+            }
+        }
+    }
+</script>
