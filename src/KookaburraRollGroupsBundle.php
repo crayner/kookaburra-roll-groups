@@ -10,7 +10,7 @@
  * Time: 18:09
  */
 
-namespace Kookaburra\RollGroup;
+namespace Kookaburra\RollGroups;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * Class KookaburraRollGroupBundle
  * @package Kookaburra\RollGroup
  */
-class KookaburraRollGroupBundle extends Bundle
+class KookaburraRollGroupsBundle extends Bundle
 {
     /**
      * build

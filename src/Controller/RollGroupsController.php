@@ -10,7 +10,7 @@
  * Time: 10:52
  */
 
-namespace Kookaburra\RollGroup\Controller;
+namespace Kookaburra\RollGroups\Controller;
 
 use App\Entity\Person;
 use App\Entity\RollGroup;

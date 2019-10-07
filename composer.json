@@ -1,7 +1,7 @@
 {
-    "name": "kookaburra/roll-group",
+    "name": "kookaburra/roll-groups",
     "type": "symfony-bundle",
-    "description": "Kookaburra Roll Group Bundle",
+    "description": "Kookaburra Roll Groups Bundle",
     "keywords": [
         "doctrine"
     ],
@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kookaburra\\RollGroup\\": "/src/"
+            "Kookaburra\\RollGroups\\": "/src/"
         },
         "exclude-from-classmap": [
             "/tests/"
@@ -33,7 +33,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Kookaburra\\RollGroup\\Tests\\": "tests/"
+            "Kookaburra\\RollGroups\\Tests\\": "tests/"
         }
     }
 }

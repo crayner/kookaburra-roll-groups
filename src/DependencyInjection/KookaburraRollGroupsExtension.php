@@ -9,7 +9,7 @@
  * Date: 5/10/2019
  * Time: 18:14
  */
-namespace Kookaburra\RollGroup\DependencyInjection;
+namespace Kookaburra\RollGroups\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -18,9 +18,9 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
  * Class KookaburraRollGroupExtension
- * @package Kookaburra\RollGroup\DependencyInjection
+ * @package Kookaburra\RollGroups\DependencyInjection
  */
-class KookaburraRollGroupExtension extends Extension
+class KookaburraRollGroupsExtension extends Extension
 {
     /**
      * load
