@@ -1,4 +1,4 @@
 controllers:
-    resource: ../../vendor/kookaburra/roll-group/src/Controller/
+    resource: ../../vendor/kookaburra/roll-groups/src/Controller/
     type: annotation
     schemes: [ 'https' ]
