@@ -20,7 +20,7 @@ use App\Provider\ProviderFactory;
 use App\Twig\Sidebar;
 use App\Twig\TableViewManager;
 use Kookaburra\UserAdmin\Util\SecurityHelper;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,7 +39,7 @@ class RollGroupsController extends AbstractController
      * @param TranslatorInterface $translator
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/list/", name="list")
-     * @Security("is_granted('ROLE_ROUTE')")
+     * @IsGranted("ROLE_ROUTE")
      */
     public function list(Request $request, TranslatorInterface $translator)
     {
@@ -71,7 +71,7 @@ class RollGroupsController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception
      * @Route("/{rollGroup}/detail/", name="detail")
-     * @Security("is_granted('ROLE_ROUTE')")
+     * @IsGranted("ROLE_ROUTE")
      */
     public function detail(RollGroup $rollGroup, Request $request, Sidebar $sidebar)
     {
