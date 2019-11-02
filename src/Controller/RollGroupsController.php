@@ -15,12 +15,12 @@ namespace Kookaburra\RollGroups\Controller;
 use App\Entity\Person;
 use App\Entity\RollGroup;
 use App\Entity\SchoolYear;
-use Kookaburra\RollGroups\Form\DetailStudentSortType;
 use App\Provider\ProviderFactory;
 use App\Twig\Sidebar;
 use App\Twig\TableViewManager;
 use Kookaburra\UserAdmin\Util\SecurityHelper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,7 +39,8 @@ class RollGroupsController extends AbstractController
      * @param TranslatorInterface $translator
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/list/", name="list")
-     * @IsGranted("ROLE_ROUTE")
+     * @Route("/")
+     * @Security("is_granted('ROLE_ROUTE', ['roll_groups__list'])")
      */
     public function list(Request $request, TranslatorInterface $translator)
     {
