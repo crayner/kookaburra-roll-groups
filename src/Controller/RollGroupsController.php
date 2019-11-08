@@ -16,7 +16,7 @@ use App\Entity\Person;
 use App\Entity\RollGroup;
 use App\Entity\SchoolYear;
 use App\Provider\ProviderFactory;
-use App\Twig\Sidebar;
+use App\Twig\SidebarContent;
 use App\Twig\TableViewManager;
 use Kookaburra\UserAdmin\Util\SecurityHelper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -69,12 +69,13 @@ class RollGroupsController extends AbstractController
      * detail
      * @param RollGroup $rollGroup
      * @param Request $request
+     * @param SidebarContent $sidebar
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \Exception
      * @Route("/{rollGroup}/detail/", name="detail")
      * @IsGranted("ROLE_ROUTE")
      */
-    public function detail(RollGroup $rollGroup, Request $request, Sidebar $sidebar)
+    public function detail(RollGroup $rollGroup, Request $request, SidebarContent $sidebar)
     {
         if (!$rollGroup instanceof RollGroup)
             $this->addFlash('error', 'The selected record does not exist, or you do not have access to it.');
