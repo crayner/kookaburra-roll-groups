@@ -12,7 +12,7 @@
 
 namespace Kookaburra\RollGroups\Controller;
 
-use App\Entity\Person;
+use Kookaburra\UserAdmin\Entity\Person;
 use App\Entity\RollGroup;
 use App\Entity\SchoolYear;
 use App\Provider\ProviderFactory;
