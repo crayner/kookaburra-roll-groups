@@ -1,4 +1,4 @@
 controllers:
-    resource: ../../../../../../vendor/kookaburra/roll-groups/src/Controller/
+    resource: '@KookaburraRollGroupsBundle/Controller/'
     type: annotation
     schemes: [ 'https' ]
