@@ -14,7 +14,7 @@ namespace Kookaburra\RollGroups\Controller;
 
 use Kookaburra\UserAdmin\Entity\Person;
 use App\Entity\RollGroup;
-use App\Entity\SchoolYear;
+use Kookaburra\SchoolAdmin\Entity\SchoolYear;
 use App\Provider\ProviderFactory;
 use App\Twig\SidebarContent;
 use App\Twig\TableViewManager;
