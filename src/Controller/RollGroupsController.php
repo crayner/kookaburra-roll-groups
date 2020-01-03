@@ -15,9 +15,16 @@
 
 namespace Kookaburra\RollGroups\Controller;
 
+use App\Container\ContainerManager;
+use App\Twig\Extension\SettingExtension;
+use App\Twig\Sidebar\Photo;
+use Kookaburra\RollGroups\Entity\RollGroup;
+use Kookaburra\RollGroups\Form\DetailStudentSortType;
+use Kookaburra\RollGroups\Form\RollGroupType;
+use Kookaburra\RollGroups\Pagination\RollGroupListPagination;
+use Kookaburra\RollGroups\Pagination\RollGroupPagination;
+use Kookaburra\SchoolAdmin\Entity\AcademicYear;
 use Kookaburra\UserAdmin\Entity\Person;
-use App\Entity\RollGroup;
-use Kookaburra\SchoolAdmin\Entity\SchoolYear;
 use App\Provider\ProviderFactory;
 use App\Twig\SidebarContent;
 use App\Twig\TableViewManager;
@@ -26,13 +33,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class RollGroupsController
  * @package App\Controller\Modules
- * @Route("/roll/groups", name="roll_groups__")
  */
 class RollGroupsController extends AbstractController
 {
@@ -40,32 +47,19 @@ class RollGroupsController extends AbstractController
      * list
      * @param Request $request
      * @param TranslatorInterface $translator
+     * @param RollGroupListPagination $pagination
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/list/", name="list")
      * @Route("/")
      * @Security("is_granted('ROLE_ROUTE', ['roll_groups__list'])")
      */
-    public function list(Request $request, TranslatorInterface $translator)
+    public function list(Request $request, TranslatorInterface $translator, RollGroupListPagination $pagination)
     {
-        $rollGroups = ProviderFactory::getRepository(RollGroup::class)->findBy(['schoolYear' => ProviderFactory::getRepository(SchoolYear::class)->find($request->getSession()->get('schoolYear', null))],['name' => 'ASC']);
+        $rollGroups = ProviderFactory::getRepository(RollGroup::class)->findBy(['academicYear' => ProviderFactory::getRepository(AcademicYear::class)->find($request->getSession()->get('academicYear', null))],['name' => 'ASC']);
 
-        $table = new TableViewManager(['formatTutors' => $translator->trans('Main Tutor', [], 'messages')]);
+        $pagination->setCurrentUser($this->getUser())->setContent($rollGroups)->setPaginationScript();
 
-        $table->addColumn('name','Name');
-        $table->addColumn('formatTutors', 'Roll Tutors');
-        $table->addColumn('spaceName', 'Room')->setHeadClass('column hidden sm:table-cell')->setBodyClass('p-2 sm:p-3 hidden sm:table-cell');
-        if ($this->getUser()->getPrimaryRole() && $this->getUser()->getPrimaryRole()->getCategory() == "Staff") {
-            $table->addColumn('studentCount', 'Students')->setHeadClass('column hidden md:table-cell')->setBodyClass('p-2 sm:p-3 hidden md:table-cell');
-        }
-        $table->addColumn('website', 'Website')->setHeadClass('column hidden md:table-cell')->setBodyClass('p-2 sm:p-3 hidden md:table-cell');
-        $table->addColumn('actionColumn', 'Actions')->setBodyClass('content-centre')->setHeadClass('content-centre')->setStyle("width: '1%'")->addAction('View', 'view', 'roll_groups__detail', ['rollGroup' => 'Id']);
-
-        return $this->render('@KookaburraRollGroups/list.html.twig',
-            [
-                'table_data' => $rollGroups,
-                'table' => $table,
-            ]
-        );
+        return $this->render('@KookaburraRollGroups/list.html.twig');
     }
 
     /**
@@ -78,13 +72,12 @@ class RollGroupsController extends AbstractController
      * @Route("/{rollGroup}/detail/", name="detail")
      * @IsGranted("ROLE_ROUTE")
      */
-    public function detail(RollGroup $rollGroup, Request $request, SidebarContent $sidebar)
+    public function detail(RollGroup $rollGroup, Request $request, SidebarContent $sidebar, ContainerManager $manager)
     {
-        if (!$rollGroup instanceof RollGroup)
-            $this->addFlash('error', 'The selected record does not exist, or you do not have access to it.');
-
-        if ($rollGroup->getTutor())
-            $sidebar->addExtra('image', $rollGroup->getTutor()->photo('lg'));
+        if ($rollGroup->getTutor()) {
+            $image = new Photo($rollGroup->getTutor(), 'getImage240', 200, 'max200 user');
+            $sidebar->addContent($image);
+        }
 
         $canPrint = SecurityHelper::isActionAccessible('/modules/Students/report_students_byRollGroup_print.php');
 
@@ -92,11 +85,10 @@ class RollGroupsController extends AbstractController
 
         $canViewStudents = ($highestAction == 'View Student Profile_brief' || $highestAction == 'View Student Profile_full' || $highestAction == 'View Student Profile_fullNoNotes');
 
-        $sortBy = new \stdClass();
-        $sortBy->sortBy = 'rollOrder, surname, preferredName';
-        $sortBy->confidential = $canViewStudents;
-        $form = $this->createForm(DetailStudentSortType::class, $sortBy);
+        $form = $this->createForm(DetailStudentSortType::class);
         $form->handleRequest($request);
+
+        $sortBy = $request->request->has('detail_student_sort') ? $request->request->get('detail_student_sort')['sortBy'] : 'rollOrder';
 
         return $this->render('@KookaburraRollGroups/details.html.twig',
             [
@@ -106,8 +98,84 @@ class RollGroupsController extends AbstractController
                 'form' => $form->createView(),
                 'canPrint' => $canPrint,
                 'canViewStudents' => $canViewStudents,
-                'students' => ProviderFactory::getRepository(Person::class)->findStudentsByRollGroup($rollGroup, $sortBy->sortBy),
+                'students' => ProviderFactory::getRepository(Person::class)->findStudentsByRollGroup($rollGroup, $sortBy),
             ]
         );
+    }
+    /**
+     * manage
+     * @Route("/manage/",name="manage")
+     * @IsGranted("ROLE_ROUTE")
+     * @return
+     */
+    public function manage(RollGroupPagination $pagination)
+    {
+        $content = ProviderFactory::getRepository(RollGroup::class)->findBy([],['name' => 'ASC']);
+        $pagination->setContent($content)->setPageMax(25)
+            ->setPaginationScript();
+        return $this->render('@KookaburraRollGroups/manage.html.twig');
+    }
+
+    /**
+     * edit
+     * @Route("/{roll}/edit/", name="edit")
+     * @Route("/year/group/add/", name="add")
+     * @IsGranted("ROLE_ROUTE")
+     */
+    public function edit(ContainerManager $manager, Request $request, ?RollGroup $roll = null)
+    {
+        if (!$roll instanceof RollGroup) {
+            $roll = new RollGroup();
+            $action = $this->generateUrl('roll_groups__add');
+        } else {
+            $action = $this->generateUrl('roll_groups__edit', ['roll' => $roll->getId()]);
+        }
+
+        $form = $this->createForm(RollGroupType::class, $roll, ['action' => $action]);
+
+        if ($request->getContentType() === 'json') {
+            $content = json_decode($request->getContent(), true);
+            $form->submit($content);
+            $data = [];
+            $data['status'] = 'success';
+            if ($form->isValid()) {
+                $provider = ProviderFactory::create(YearGroup::class);
+                $data = $provider->persistFlush($roll, $data);
+                if ($data['status'] === 'success') {
+                    $form = $this->createForm(YearGroupType::class, $roll, ['action' => $this->generateUrl('school_admin__year_group_edit', ['year' => $roll->getId()])]);
+                }
+            } else {
+                $data['errors'][] = ['class' => 'error', 'message' => TranslationsHelper::translate('return.error.1', [], 'messages')];
+                $data['status'] = 'error';
+            }
+
+            $manager->singlePanel($form->createView());
+            $data['form'] = $manager->getFormFromContainer('formContent', 'single');
+
+            return new JsonResponse($data, 200);
+        }
+        $manager->singlePanel($form->createView());
+
+        return $this->render('@KookaburraRollGroups/edit.html.twig',
+            [
+                'roll' => $roll,
+            ]
+        );
+    }
+
+    /**
+     * delete
+     * @Route("/{roll}/delete/", name="delete")
+     * @IsGranted("ROLE_ROUTE")
+     */
+    public function delete(RollGroup $roll, FlashBagInterface $flashBag, TranslatorInterface $translator)
+    {
+        $provider = ProviderFactory::create(RollGroup::class);
+
+        $provider->delete($roll);
+
+        $provider->getMessageManager()->pushToFlash($flashBag, $translator);
+
+        return $this->redirectToRoute('roll_groups__manage');
     }
 }

@@ -1,0 +1,28 @@
+View: View
+Name: Name
+Tutors: Tutors
+Room: Room
+Students: Students
+Website: Website
+Actions: Actions
+There are no records to display.: There are no records to display.
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+First Page: First Page
+Previous Page: Previous Page
+Next Page: Next Page
+Last Page: Last Page
+This page shows all roll groups in the current academic year.: This page shows all roll groups in the current academic year.
+Sort By: Sort By
+detailstudentsorttype:
+    sortby:
+        rollorder: Roll Order
+        surname: Surname
+        preferredname: Preferred Name
+Show Confidential Data: Show Confidential Data
+Roll Groups: Roll Groups
+View Roll Groups: View Roll Groups
+Basic Information: Basic Information
+Educational Assistants: Educational Assistants
+Location: Location
+Filters: Filters
+Print: Print

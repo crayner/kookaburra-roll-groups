@@ -1,0 +1,17 @@
+{% trans_default_domain 'RollGroups' %}
+
+{% extends 'kookaburra.html.twig' %}
+
+{% set moduleName = 'Roll Groups' %}
+{% set module = {
+    baseURL: 'roll_groups',
+    crumbs: [
+        {uri: 'roll_groups__manage', name: 'Roll Groups'},
+    ],
+    title: 'Manage Roll Groups', domain: 'RollGroups'} %}
+{% set breadcrumbs = 'new' %}
+
+{% block content %}
+    <button class="close-button gray" title="{{ 'Add'|trans({}, 'messages') }}" type="button" onclick="window.open('{{ path('roll_groups__add') }}','_self')"><span class="fas fa-plus-circle fa-fw"/></button>
+    <div id="paginationContent"></div>
+{% endblock content %}

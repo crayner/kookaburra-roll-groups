@@ -1,4 +1,4 @@
-
+{% trans_default_domain 'RollGroups' %}
 
 {% extends 'kookaburra.html.twig' %}
 
@@ -7,6 +7,6 @@
 {% set breadcrumbs = 'new' %}
 
 {% block content %}
-    <p>{{ 'This page shows all roll groups in the current school year.'|trans }}</p>
-    {% include 'default/table_view.html.twig' %}
+    <p>{{ 'This page shows all roll groups in the current academic year.'|trans }}</p>
+    <div id="paginationContent"></div>
 {% endblock content %}
