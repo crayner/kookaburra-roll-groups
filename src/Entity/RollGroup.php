@@ -12,7 +12,7 @@
  */
 namespace Kookaburra\RollGroups\Entity;
 
-use App\Entity\Space;
+use Kookaburra\SchoolAdmin\Entity\Facility;
 use App\Manager\EntityInterface;
 use App\Manager\Traits\BooleanList;
 use App\Manager\Traits\EntityGlobals;

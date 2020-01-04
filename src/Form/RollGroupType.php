@@ -15,7 +15,7 @@
 
 namespace Kookaburra\RollGroups\Form;
 
-use App\Entity\Space;
+use Kookaburra\SchoolAdmin\Entity\Facility;
 use App\Form\Type\DisplayType;
 use App\Form\Type\ReactFormType;
 use App\Form\Type\ToggleType;

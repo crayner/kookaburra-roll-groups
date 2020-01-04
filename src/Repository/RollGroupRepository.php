@@ -12,7 +12,10 @@
  */
 namespace Kookaburra\RollGroups\Repository;
 
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Kookaburra\RollGroups\Entity\RollGroup;
+use Kookaburra\SchoolAdmin\Entity\Facility;
 use Kookaburra\SchoolAdmin\Util\AcademicYearHelper;
 use Kookaburra\UserAdmin\Entity\Person;
 use Kookaburra\SchoolAdmin\Entity\AcademicYear;
@@ -109,5 +112,24 @@ class RollGroupRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult()
         ;
+    }
+
+    /**
+     * countFacility
+     * @param Facility $facility
+     * @return int
+     */
+    public function countFacility(Facility $facility): int
+    {
+        try {
+            return intval($this->createQueryBuilder('r')
+                ->select('COUNT(r.id)')
+                ->where('r.facility = :facility')
+                ->setParameter('facility', $facility)
+                ->getQuery()
+                ->getSingleScalarResult());
+        } catch ( NoResultException | NonUniqueResultException $e) {
+            return 0;
+        }
     }
 }
