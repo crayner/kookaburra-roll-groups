@@ -23,6 +23,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\PersistentCollection;
 use Kookaburra\SchoolAdmin\Entity\AcademicYear;
+use Kookaburra\SchoolAdmin\Entity\Facility;
 use Kookaburra\UserAdmin\Entity\Person;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -36,12 +37,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     @ORM\UniqueConstraint(name="nameAcademicYear", columns={"name","academic_year"}),
  *     @ORM\UniqueConstraint(name="abbrAcademicYear", columns={"nameShort","academic_year"}),
  *     @ORM\UniqueConstraint(name="tutorAcademicYear", columns={"tutor1","academic_year"}),
- *     @ORM\UniqueConstraint(name="spaceAcademicYear", columns={"space","academic_year"})
+ *     @ORM\UniqueConstraint(name="facilityAcademicYear", columns={"facility","academic_year"})
  * })
  * @UniqueEntity({"name","academicYear"})
  * @UniqueEntity({"nameShort","academicYear"})
  * @UniqueEntity({"tutor","academicYear"})
- * @UniqueEntity({"space","academicYear"})
+ * @UniqueEntity({"facility","academicYear"})
  */
 class RollGroup implements EntityInterface
 {
@@ -122,12 +123,12 @@ class RollGroup implements EntityInterface
     private $assistant3;
 
     /**
-     * @var Space|null
-     * @ORM\ManyToOne(targetEntity="App\Entity\Space")
-     * @ORM\JoinColumn(name="space", referencedColumnName="gibbonSpaceID",nullable=true)
+     * @var Facility|null
+     * @ORM\ManyToOne(targetEntity="Kookaburra\SchoolAdmin\Entity\Facility")
+     * @ORM\JoinColumn(name="facility", referencedColumnName="id",nullable=true)
      * @Assert\NotBlank()
      */
-    private $space;
+    private $facility;
 
     /**
      * @var RollGroup|null
@@ -345,20 +346,22 @@ class RollGroup implements EntityInterface
     }
 
     /**
-     * @return Space|null
+     * @return Facility|null
      */
-    public function getSpace(): ?Space
+    public function getFacility(): ?Facility
     {
-        return $this->space;
+        return $this->facility;
     }
 
     /**
-     * @param Space|null $space
+     * Facility.
+     *
+     * @param Facility|null $facility
      * @return RollGroup
      */
-    public function setSpace(?Space $space): RollGroup
+    public function setFacility(?Facility $facility): RollGroup
     {
-        $this->space = $space;
+        $this->facility = $facility;
         return $this;
     }
 

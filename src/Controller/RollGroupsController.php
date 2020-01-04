@@ -16,10 +16,8 @@
 namespace Kookaburra\RollGroups\Controller;
 
 use App\Container\ContainerManager;
-use App\Twig\Extension\SettingExtension;
 use App\Twig\Sidebar\Photo;
 use App\Util\ErrorMessageHelper;
-use App\Util\TranslationsHelper;
 use Kookaburra\RollGroups\Entity\RollGroup;
 use Kookaburra\RollGroups\Form\DetailStudentSortType;
 use Kookaburra\RollGroups\Form\RollGroupType;
@@ -30,7 +28,6 @@ use Kookaburra\SchoolAdmin\Util\AcademicYearHelper;
 use Kookaburra\UserAdmin\Entity\Person;
 use App\Provider\ProviderFactory;
 use App\Twig\SidebarContent;
-use App\Twig\TableViewManager;
 use Kookaburra\UserAdmin\Util\SecurityHelper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
