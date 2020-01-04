@@ -18,6 +18,8 @@ namespace Kookaburra\RollGroups\Controller;
 use App\Container\ContainerManager;
 use App\Twig\Extension\SettingExtension;
 use App\Twig\Sidebar\Photo;
+use App\Util\ErrorMessageHelper;
+use App\Util\TranslationsHelper;
 use Kookaburra\RollGroups\Entity\RollGroup;
 use Kookaburra\RollGroups\Form\DetailStudentSortType;
 use Kookaburra\RollGroups\Form\RollGroupType;
@@ -33,6 +35,7 @@ use Kookaburra\UserAdmin\Util\SecurityHelper;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -127,6 +130,7 @@ class RollGroupsController extends AbstractController
     {
         if (!$roll instanceof RollGroup) {
             $roll = new RollGroup();
+            $roll->setAcademicYear(AcademicYearHelper::getCurrentAcademicYear());
             $action = $this->generateUrl('roll_groups__add');
         } else {
             $action = $this->generateUrl('roll_groups__edit', ['roll' => $roll->getId()]);
@@ -140,14 +144,22 @@ class RollGroupsController extends AbstractController
             $data = [];
             $data['status'] = 'success';
             if ($form->isValid()) {
-                $provider = ProviderFactory::create(YearGroup::class);
+                $id = $roll->getId();
+                $provider = ProviderFactory::create(RollGroup::class);
+                $year = AcademicYearHelper::getCurrentAcademicYear();
+                $year = ProviderFactory::getRepository(AcademicYear::class)->find($year->getId());
+                $roll->setAcademicYear($year);
                 $data = $provider->persistFlush($roll, $data);
                 if ($data['status'] === 'success') {
-                    $form = $this->createForm(YearGroupType::class, $roll, ['action' => $this->generateUrl('school_admin__year_group_edit', ['year' => $roll->getId()])]);
+                    $form = $this->createForm(RollGroupType::class, $roll, ['action' => $this->generateUrl('roll_groups__edit', ['roll' => $roll->getId()])]);
+                    if ($id !== $roll->getId()) {
+                        $data['status'] = 'redirect';
+                        $data['redirect'] = $this->generateUrl('roll_groups__edit', ['roll' => $roll->getId()]);
+                        ErrorMessageHelper::convertToFlash($data, $request->getSession()->getBag('flashes'));
+                    }
                 }
             } else {
-                $data['errors'][] = ['class' => 'error', 'message' => TranslationsHelper::translate('return.error.1', [], 'messages')];
-                $data['status'] = 'error';
+                $data = ErrorMessageHelper::getInvalidInputsMessage($data, true);
             }
 
             $manager->singlePanel($form->createView());

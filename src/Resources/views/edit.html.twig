@@ -12,7 +12,9 @@
 {% set breadcrumbs = 'new' %}
 
 {% block content %}
+    <h3>
     <button class="close-button gray" title="{{ 'Return'|trans({}, 'messages') }}" type="button" onclick="window.open('{{ path('roll_groups__manage') }}','_self')"><span class="fas fa-reply fa-fw"/></button>
     <button class="close-button gray" title="{{ 'Add'|trans({}, 'messages') }}" type="button" onclick="window.open('{{ path('roll_groups__add') }}','_self')"><span class="fas fa-plus-circle fa-fw"/></button>
+    {{ roll.id > 0 ? 'Edit Roll Group' : 'Add Roll Group' }}</h3>
     <div id="formContent"></div>
 {% endblock content %}

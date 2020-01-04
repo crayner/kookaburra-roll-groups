@@ -31,9 +31,17 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Class RollGroup
  * @package Kookaburra\RollGroups\Entity
  * @ORM\Entity(repositoryClass="Kookaburra\RollGroups\Repository\RollGroupRepository")
- * @ORM\Table(options={"auto_increment": 1}, name="RollGroup", uniqueConstraints={@ORM\UniqueConstraint(name="nameAcademicYear", columns={"name","academic_year"}), @ORM\UniqueConstraint(name="abbrAcademicYear", columns={"nameShort","academic_year"})})
+ * @ORM\Table(options={"auto_increment": 1}, name="RollGroup",
+ *     uniqueConstraints={
+ *     @ORM\UniqueConstraint(name="nameAcademicYear", columns={"name","academic_year"}),
+ *     @ORM\UniqueConstraint(name="abbrAcademicYear", columns={"nameShort","academic_year"}),
+ *     @ORM\UniqueConstraint(name="tutorAcademicYear", columns={"tutor1","academic_year"}),
+ *     @ORM\UniqueConstraint(name="spaceAcademicYear", columns={"space","academic_year"})
+ * })
  * @UniqueEntity({"name","academicYear"})
  * @UniqueEntity({"nameShort","academicYear"})
+ * @UniqueEntity({"tutor","academicYear"})
+ * @UniqueEntity({"space","academicYear"})
  */
 class RollGroup implements EntityInterface
 {
@@ -74,6 +82,7 @@ class RollGroup implements EntityInterface
      * @var Person|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\UserAdmin\Entity\Person")
      * @ORM\JoinColumn(name="tutor1",referencedColumnName="gibbonPersonID",nullable=true)
+     * @Assert\NotBlank()
      */
     private $tutor;
 
@@ -116,12 +125,13 @@ class RollGroup implements EntityInterface
      * @var Space|null
      * @ORM\ManyToOne(targetEntity="App\Entity\Space")
      * @ORM\JoinColumn(name="space", referencedColumnName="gibbonSpaceID",nullable=true)
+     * @Assert\NotBlank()
      */
     private $space;
 
     /**
      * @var RollGroup|null
-     * @ORM\ManyToOne(targetEntity="RollGroup")
+     * @ORM\ManyToOne(targetEntity="Kookaburra\RollGroups\Entity\RollGroup")
      * @ORM\JoinColumn(name="next_roll_group", referencedColumnName="id",nullable=true)
      */
     private $nextRollGroup;
@@ -135,7 +145,7 @@ class RollGroup implements EntityInterface
 
     /**
      * @var string|null
-     * @ORM\Column()
+     * @ORM\Column(nullable=true)
      * @Assert\Url()
      */
     private $website;
