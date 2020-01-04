@@ -27,4 +27,14 @@ class RollGroupProvider implements EntityProviderInterface
      * @var string
      */
     private $entityName = RollGroup::class;
+
+    /**
+     * canDelete
+     * @param RollGroup $roll
+     * @return bool
+     */
+    public function canDelete(RollGroup $roll): bool
+    {
+        return $roll->getStudentCount() === 0;
+    }
 }

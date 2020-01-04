@@ -90,4 +90,24 @@ class RollGroupRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult();
     }
+
+    /**
+     * findByAcademicYear
+     * @param AcademicYear $year
+     */
+    public function findByAcademicYear(AcademicYear $year): array
+    {
+        return $this->createQueryBuilder('r')
+            ->select(['r','s','t','staff'])
+            ->join('r.space', 's')
+            ->join('r.tutor', 't')
+            ->join('t.staff', 'staff')
+            ->join('r.studentEnrolments', 'se')
+            ->where('r.academicYear = :year')
+            ->setParameter('year', $year)
+            ->orderBy('r.name')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

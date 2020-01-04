@@ -24,6 +24,7 @@ use Kookaburra\RollGroups\Form\RollGroupType;
 use Kookaburra\RollGroups\Pagination\RollGroupListPagination;
 use Kookaburra\RollGroups\Pagination\RollGroupPagination;
 use Kookaburra\SchoolAdmin\Entity\AcademicYear;
+use Kookaburra\SchoolAdmin\Util\AcademicYearHelper;
 use Kookaburra\UserAdmin\Entity\Person;
 use App\Provider\ProviderFactory;
 use App\Twig\SidebarContent;
@@ -110,7 +111,7 @@ class RollGroupsController extends AbstractController
      */
     public function manage(RollGroupPagination $pagination)
     {
-        $content = ProviderFactory::getRepository(RollGroup::class)->findBy([],['name' => 'ASC']);
+        $content = ProviderFactory::getRepository(RollGroup::class)->findByAcademicYear(AcademicYearHelper::getCurrentAcademicYear());
         $pagination->setContent($content)->setPageMax(25)
             ->setPaginationScript();
         return $this->render('@KookaburraRollGroups/manage.html.twig');

@@ -16,6 +16,7 @@ use App\Entity\Space;
 use App\Manager\EntityInterface;
 use App\Manager\Traits\BooleanList;
 use App\Manager\Traits\EntityGlobals;
+use App\Provider\ProviderFactory;
 use App\Util\EntityHelper;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -510,7 +511,7 @@ class RollGroup implements EntityInterface
      */
     public function getStudentCount(): int
     {
-        return $this->getStudentEnrolments() ? count($this->getStudentEnrolments()) : '';
+        return $this->getStudentEnrolments() ? count($this->getStudentEnrolments()) : 0;
     }
 
     /**
@@ -553,7 +554,13 @@ class RollGroup implements EntityInterface
             'location' => $this->getSpace() ? $this->getSpace()->getName() : '',
             'website' => $this->getWebsite(),
             'students' => $this->getStudentEnrolments()->count(),
-            'canDelete' => true,
+            'canDelete' => $this->canDelete(),
         ];
+    }
+
+    public function canDelete(): bool
+    {
+        return ProviderFactory::create(RollGroup::class)->canDelete($this);
+        return false;
     }
 }
