@@ -35,7 +35,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     uniqueConstraints={
  *     @ORM\UniqueConstraint(name="nameAcademicYear", columns={"name","academic_year"}),
  *     @ORM\UniqueConstraint(name="abbrAcademicYear", columns={"nameShort","academic_year"}),
- *     @ORM\UniqueConstraint(name="tutorAcademicYear", columns={"tutor1","academic_year"}),
+ *     @ORM\UniqueConstraint(name="tutor1AcademicYear", columns={"tutor1","academic_year"}),
  *     @ORM\UniqueConstraint(name="facilityAcademicYear", columns={"facility","academic_year"})
  * })
  * @UniqueEntity({"name","academicYear"})
@@ -81,7 +81,7 @@ class RollGroup implements EntityInterface
     /**
      * @var Person|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\UserAdmin\Entity\Person")
-     * @ORM\JoinColumn(name="tutor1",referencedColumnName="gibbonPersonID",nullable=true)
+     * @ORM\JoinColumn(name="tutor1",referencedColumnName="id",nullable=true)
      * @Assert\NotBlank()
      */
     private $tutor;
@@ -89,35 +89,35 @@ class RollGroup implements EntityInterface
     /**
      * @var Person|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\UserAdmin\Entity\Person")
-     * @ORM\JoinColumn(name="tutor2",referencedColumnName="gibbonPersonID",nullable=true)
+     * @ORM\JoinColumn(name="tutor2",referencedColumnName="id",nullable=true)
      */
     private $tutor2;
 
     /**
      * @var Person|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\UserAdmin\Entity\Person")
-     * @ORM\JoinColumn(name="tutor3",referencedColumnName="gibbonPersonID",nullable=true)
+     * @ORM\JoinColumn(name="tutor3",referencedColumnName="id",nullable=true)
      */
     private $tutor3;
 
     /**
      * @var Person|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\UserAdmin\Entity\Person")
-     * @ORM\JoinColumn(name="assistant1",referencedColumnName="gibbonPersonID",nullable=true)
+     * @ORM\JoinColumn(name="assistant1",referencedColumnName="id",nullable=true)
      */
     private $assistant;
 
     /**
      * @var Person|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\UserAdmin\Entity\Person")
-     * @ORM\JoinColumn(name="assistant2",referencedColumnName="gibbonPersonID",nullable=true)
+     * @ORM\JoinColumn(name="assistant2",referencedColumnName="id",nullable=true)
      */
     private $assistant2;
 
     /**
      * @var Person|null
      * @ORM\ManyToOne(targetEntity="Kookaburra\UserAdmin\Entity\Person")
-     * @ORM\JoinColumn(name="assistant3",referencedColumnName="gibbonPersonID",nullable=true)
+     * @ORM\JoinColumn(name="assistant3",referencedColumnName="id",nullable=true)
      */
     private $assistant3;
 
