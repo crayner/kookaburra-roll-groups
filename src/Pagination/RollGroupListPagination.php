@@ -19,7 +19,7 @@ use App\Manager\Entity\PaginationAction;
 use App\Manager\Entity\PaginationColumn;
 use App\Manager\Entity\PaginationRow;
 use App\Manager\ReactPaginationInterface;
-use App\Manager\ReactPaginationManager;
+use App\Manager\AbstractPaginationManager;
 use App\Util\TranslationsHelper;
 use Kookaburra\UserAdmin\Entity\Person;
 use Kookaburra\UserAdmin\Manager\SecurityUser;
@@ -29,7 +29,7 @@ use Kookaburra\UserAdmin\Util\UserHelper;
  * Class RollGroupListPagination
  * @package Kookaburra\RollGroups\Pagination
  */
-class RollGroupListPagination  extends ReactPaginationManager
+class RollGroupListPagination  extends AbstractPaginationManager
 {
     /**
      * execute
