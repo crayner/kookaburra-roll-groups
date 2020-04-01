@@ -1,0 +1,49 @@
+View: 查看
+Name: 名称
+Tutors: 导师
+Room: 教室
+Students: 学生
+Website: 网站
+Actions: 操作
+'There are no records to display.': '查询 无记录。'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 排序方式
+detailstudentsorttype:
+    sortby:
+        rollorder: 小组顺序
+        surname: 姓
+        preferredname: 英文名
+'Show Confidential Data': '显示核心数据'
+'Roll Groups': 小组
+'View Roll Groups': 查看小组
+'Basic Information': 基本信息
+'Educational Assistants': 教育助理
+Location: 位置
+Filters: 筛选
+Print: 打印
+Edit: 编辑
+Delete: '删除'
+'Manage Roll Groups': 管理小组
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 这个值不能改变。
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 导师
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 助教
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 下一组
+'Sets student progression on rollover.': 在移植时设定学生进度。
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 这个班级是否应该考虑考勤？
+Submit: 提交
+'Add Roll Group': '添加小组'
+'Edit Roll Group': 编辑小组

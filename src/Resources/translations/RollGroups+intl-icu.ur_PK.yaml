@@ -1,0 +1,49 @@
+View: دیکھیں
+Name: نام
+Tutors: ٹیوٹرز
+Room: کمرہ
+Students: طلباء
+Website: 'ویب سائٹ'
+Actions: ایکشنز
+'There are no records to display.': 'دکھانے کے لئے کوئی ریکارڈ نہیں ہے.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'Sort By'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'Roll Order'
+        surname: 'آخری نام'
+        preferredname: 'ترجیحی نام'
+'Show Confidential Data': 'دیکھائیں خفیہ ڈیٹا'
+'Roll Groups': 'رول گروپس/کلاس سیکشنز'
+'View Roll Groups': 'رول گروپس دیکھیں'
+'Basic Information': 'بنیادی معلومات'
+'Educational Assistants': 'Educational Assistants'
+Location: مقام
+Filters: فلٹرز
+Print: پرنٹ
+Edit: 'ترمیم کریں'
+Delete: 'حزف کریں'
+'Manage Roll Groups': 'رول گروپ منظم کریں'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'یہ ویلیو تبدیل نہیں ہو سکتی۔'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'مین ٹیوٹر'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'Educational Assistant'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'اگلا  رول گروپ'
+'Sets student progression on rollover.': 'رول اوور پر طالب علم کی ترقی کا تعین کرتا ہے.'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'Should this class allow attendance to be taken?'
+Submit: 'جمع کریں'
+'Add Roll Group': 'رول گروپ شامل کریں'
+'Edit Roll Group': 'رول گروپ میں ترمیم کریں'

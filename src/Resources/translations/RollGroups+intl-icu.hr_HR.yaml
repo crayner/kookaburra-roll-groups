@@ -1,0 +1,49 @@
+View: Prikaz
+Name: Ime
+Tutors: Tutori
+Room: Prostorija
+Students: Polaznici
+Website: Web
+Actions: Akcije
+'There are no records to display.': 'Nema zapisa za prikaz.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'Sortiraj po'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'Redoslijed prozivanja'
+        surname: Prezime
+        preferredname: 'Najčešće korišteno ime'
+'Show Confidential Data': 'Prikaži povjerljive podatke'
+'Roll Groups': Odjeli
+'View Roll Groups': 'Prikaz grupa'
+'Basic Information': 'Osnovne informacije'
+'Educational Assistants': 'Obrazovni asistenti'
+Location: Lokacija
+Filters: Filtri
+Print: Tiskanje
+Edit: Uredi
+Delete: Izbriši
+'Manage Roll Groups': 'Upravljanje odjelima'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'Ovu vrijednost nije moguće promijeniti.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'Glavni mentor'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'Obrazovni asistent'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'Sljedeći odjel'
+'Sets student progression on rollover.': 'Sets student progression on rollover.'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'Should this class allow attendance to be taken?'
+Submit: Predaj
+'Add Roll Group': 'Dodaj odjel'
+'Edit Roll Group': 'Uredi odjel'

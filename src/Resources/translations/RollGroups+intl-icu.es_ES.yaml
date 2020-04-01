@@ -1,0 +1,49 @@
+View: Ver
+Name: Nombre
+Tutors: Tutores
+Room: Sala
+Students: Estudiantes
+Website: 'Sitio web'
+Actions: Acciones
+'There are no records to display.': 'No hay registros para mostrar.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'Primera página'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Última página'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'Ordenado por'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'Orden de Rol'
+        surname: Apellido
+        preferredname: 'Nombre Preferido'
+'Show Confidential Data': 'Mostrar Datos Confidenciales'
+'Roll Groups': Cursos
+'View Roll Groups': 'Ver Cursos'
+'Basic Information': 'Información Básica'
+'Educational Assistants': 'Asistentes Educacionales'
+Location: Ubicación
+Filters: Filtros
+Print: Imprimir
+Edit: Editar
+Delete: Eliminar
+'Manage Roll Groups': 'Gestionar Cursos'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'Este valor no se puede cambiar.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'Tutor Principal'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'Asistente Educativo'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'Siguiente Curso'
+'Sets student progression on rollover.': 'Establece la progresión de los estudiantes en la promoción.'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': '¿Esta asignatura debe permitir la toma de asistencia?'
+Submit: Enviar
+'Add Roll Group': 'Añadir Curso'
+'Edit Roll Group': 'Editar Curso'

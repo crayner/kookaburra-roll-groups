@@ -1,0 +1,49 @@
+View: Xem
+Name: Tên
+Tutors: 'Hướng dẫn'
+Room: Phòng
+Students: 'Học Viên'
+Website: 'Trang Web'
+Actions: 'Thao tác'
+'There are no records to display.': 'Không có ghi chép nào thể hiện.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'Sắp xếp Theo'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'Thứ tự Cuộn'
+        surname: Họ
+        preferredname: 'Tên ưa thích'
+'Show Confidential Data': 'Hiển thị dữ liệu bí mật'
+'Roll Groups': 'Các Nhóm'
+'View Roll Groups': 'Xem Các Nhóm'
+'Basic Information': 'Thông tin cơ bản'
+'Educational Assistants': 'Trợ lý Giáo dục'
+Location: 'Vị trí'
+Filters: 'Bộ lọc'
+Print: In
+Edit: 'Chỉnh Sửa'
+Delete: Xóa
+'Manage Roll Groups': 'Quản lý Các Nhóm'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'Giá trị này không thể thay đổi được.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'Hướng dẫn Chính'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'Trợ lý Giáo dục'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'Nhóm kế tiếp'
+'Sets student progression on rollover.': 'Đặt tiến trình của học viên trên thanh cuốn.'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'Liệu lớp học này có cho phép tham dự không?'
+Submit: Gửi
+'Add Roll Group': 'Thêm Nhóm'
+'Edit Roll Group': 'Chỉnh sửa Nhóm'

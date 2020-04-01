@@ -1,0 +1,49 @@
+View: Görünüm
+Name: isim
+Tutors: Eğitmenler
+Room: Oda
+Students: Öğrenciler
+Website: 'Web sitesi'
+Actions: Eylemler
+'There are no records to display.': 'Gösterilecek kayıt yok.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'Göre sırala'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'Rulo Siparişi'
+        surname: Soyadı
+        preferredname: 'Tercih edilen isim'
+'Show Confidential Data': 'Gizli Verileri Göster'
+'Roll Groups': 'Rulo Grupları'
+'View Roll Groups': 'Rulo Gruplarını Görüntüle'
+'Basic Information': 'Temel bilgi'
+'Educational Assistants': 'Eğitim Asistanları'
+Location: yer
+Filters: Filtreler
+Print: baskı
+Edit: Düzenle
+Delete: silmek
+'Manage Roll Groups': 'Rulo Gruplarını Yönet'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'Bu değer değiştirilemez.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'Ana öğretmen'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'Eğitim Asistanı'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'Sonraki Rulo Grubu'
+'Sets student progression on rollover.': 'Rollover üzerinde öğrencinin ilerlemesini ayarlar.'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'Bu ders devam edilmesine izin vermeli mi?'
+Submit: Gönder
+'Add Roll Group': 'Rulo Grubu Ekle'
+'Edit Roll Group': 'Rulo Grubunu Düzenle'

@@ -1,0 +1,49 @@
+View: معاينة
+Name: الإسم
+Tutors: المعلمون
+Room: قاعة
+Students: الطلاب
+Website: 'الموقع الإلكتروني'
+Actions: الإجراءات
+'There are no records to display.': 'لا توجد سجلات لعرضها.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'فرز بحسب'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'ترتيب القائمة'
+        surname: 'اسم العائلة'
+        preferredname: 'الاسم المفضل'
+'Show Confidential Data': 'مشاهدة البيانات السرية'
+'Roll Groups': 'قوائم المجموعات'
+'View Roll Groups': 'عرض أدوار المجموعات'
+'Basic Information': 'المعلومات الاساسية'
+'Educational Assistants': 'المساعدون التربويون'
+Location: المكان
+Filters: التصفيات
+Print: إطبع
+Edit: تحرير
+Delete: حذف
+'Manage Roll Groups': 'إدارة قوائم المجموعات'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'لا يمكن تغيير هذه القيمة.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'المعلم الرئيسي'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'مساعد تربوي'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'قائمة المجموعة التالية'
+'Sets student progression on rollover.': 'حدد تقدم الطلاب في '
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'هل يسمح هذا الفصل بتتبع الحضور؟'
+Submit: ارسال
+'Add Roll Group': 'إضافة قائمة المجموعة'
+'Edit Roll Group': 'تحرير قائمة المجموعة'

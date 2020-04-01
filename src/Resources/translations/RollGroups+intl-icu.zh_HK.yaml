@@ -1,0 +1,49 @@
+View: 觀看
+Name: 名稱
+Tutors: 導師
+Room: 房間
+Students: 學生
+Website: 網站
+Actions: 行動
+'There are no records to display.': 沒有要顯示的記錄
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': '分類選項'
+detailstudentsorttype:
+    sortby:
+        rollorder: 出席表秩序
+        surname: 姓
+        preferredname: 首選名稱
+'Show Confidential Data': 顯示機密的數據
+'Roll Groups': 班級
+'View Roll Groups': 觀看班級
+'Basic Information': 基本資料
+'Educational Assistants': 'Educational Assistants'
+Location: 地點
+Filters: 篩選
+Print: 打印
+Edit: 編輯
+Delete: 刪除
+'Manage Roll Groups': 管理班級
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 不能改變這個價值。
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 主要老師
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 教育助手
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 下個班級
+'Sets student progression on rollover.': 在側翻設置學生的級數。
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'Should this class allow attendance to be taken?'
+Submit: 提交
+'Add Roll Group': '加班級'
+'Edit Roll Group': 編輯班級

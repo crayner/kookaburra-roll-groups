@@ -1,0 +1,49 @@
+View: Afișare
+Name: Nume
+Tutors: Tutori
+Room: 'Sală Clasă'
+Students: Studenți
+Website: Website
+Actions: Acțiuni
+'There are no records to display.': 'Nu există înregistrări de afișat'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'Sortare după'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'Comandă rol'
+        surname: 'Nume familie'
+        preferredname: 'Nume preferat'
+'Show Confidential Data': 'Arată confidențialitatea datelor'
+'Roll Groups': Clase
+'View Roll Groups': 'Afișare Clase'
+'Basic Information': 'Informații de bază'
+'Educational Assistants': 'Educational Assistants'
+Location: Locație
+Filters: Filtre
+Print: Printați
+Edit: Editare
+Delete: Șterge
+'Manage Roll Groups': 'Gestionați Clase'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'Această valoare nu poate fi schimbată.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'Tutore principal'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'Asistent educațional'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'Clasa următoare'
+'Sets student progression on rollover.': 'Setări progres cursant pe Rollover.'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'Should this class allow attendance to be taken?'
+Submit: Trimite
+'Add Roll Group': 'Adaugă Clasă'
+'Edit Roll Group': 'Editare Clasă'

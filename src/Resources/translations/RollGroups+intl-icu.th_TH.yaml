@@ -1,0 +1,49 @@
+View: ดู
+Name: ชื่อ
+Tutors: ติวเตอร์
+Room: ห้อง
+Students: นักศึกษา
+Website: เว็บไซต์
+Actions: แอ็กชั่น
+'There are no records to display.': ไม่มีรายการในการแสดงผล
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': หน้าแรก
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': หน้าสุดท้าย
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': ลำดับโดย
+detailstudentsorttype:
+    sortby:
+        rollorder: ลำดับกลุ่ม
+        surname: นามสกุล
+        preferredname: ชื่อที่ต้องการ
+'Show Confidential Data': แสดงข้อมูลที่เป็นความลับ
+'Roll Groups': 'Roll Group'
+'View Roll Groups': 'ดู Roll Group'
+'Basic Information': ข้อมูลเบื้องต้น
+'Educational Assistants': ผู้ช่วยการศึกษา
+Location: ตำแหน่งที่ตั้ง
+Filters: ฟิลเตอร์
+Print: พิมพ์
+Edit: แก้ไข
+Delete: ลบ
+'Manage Roll Groups': 'จัดการ Roll Group'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': ไม่สามารถเปลี่ยนค่านี้ได้
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': ติวเตอร์หลัก
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': ผู้ช่วยด้านการศึกษา
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'Roll Group ถัดไป'
+'Sets student progression on rollover.': ตั้งค่าความก้าวหน้าของนักศึกษาเมื่อทำแบบโรลโอเวอร์
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'ชั้นเรียนนี้ควรอนุญาตให้เข้าร่วมหรือไม่?'
+Submit: Submit
+'Add Roll Group': 'เพิ่ม Roll Group'
+'Edit Roll Group': 'แก้ไข Roll Group'

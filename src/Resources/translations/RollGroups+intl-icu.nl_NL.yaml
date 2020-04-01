@@ -1,0 +1,49 @@
+View: Weergave
+Name: Naam
+Tutors: Leerkrachten
+Room: Lokaal
+Students: Studenten
+Website: Website
+Actions: Acties
+'There are no records to display.': 'Er zijn geen gegevens om weer te geven.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'Sorteren volgens'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'Sorteervolgorde klaslijst'
+        surname: Familienaam
+        preferredname: Roepnaam
+'Show Confidential Data': 'Toon vertrouwelijke gegevens'
+'Roll Groups': Klasgroepen
+'View Roll Groups': 'Toon Klasgroepen'
+'Basic Information': Basisinformatie
+'Educational Assistants': 'Educational Assistants'
+Location: Locatie
+Filters: Filters
+Print: Afdrukken
+Edit: Wijjzig
+Delete: Wis
+'Manage Roll Groups': 'Klasgroepen organiseren'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'Deze waarde kan niet worden gewijzigd.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': Hoofdleerkracht
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': Stagair
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'Volgende klasgroep'
+'Sets student progression on rollover.': 'Bepaal de vooruitgang voor volgend schooljaar'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'Should this class allow attendance to be taken?'
+Submit: Invoeren
+'Add Roll Group': 'Klasgroep toevoegen'
+'Edit Roll Group': 'Bewerk klasgroep'

@@ -1,0 +1,49 @@
+View: הצג
+Name: שם
+Tutors: מדריכים
+Room: חדר
+Students: תלמידים
+Website: 'אתר אינטרנט'
+Actions: פעולות
+'There are no records to display.': 'אין נתונים להצגה.'
+'Records {start}-{end} of {total}': 'Records {start}-{end} of {total}'
+'First Page': 'First Page'
+'Previous Page': 'Previous Page'
+'Next Page': 'Next Page'
+'Last Page': 'Last Page'
+'This page shows all roll groups in the current academic year.': 'This page shows all roll groups in the current academic year.'
+'Sort By': 'מיין לפי'
+detailstudentsorttype:
+    sortby:
+        rollorder: 'סדר רול'
+        surname: 'שם משפחה'
+        preferredname: 'שם מועדף'
+'Show Confidential Data': 'הצג נתונים חסויים'
+'Roll Groups': 'קבוצות רול'
+'View Roll Groups': 'הצג קבוצות רול'
+'Basic Information': 'מידע בסיסי'
+'Educational Assistants': 'עוזרי חינוך'
+Location: מיקום
+Filters: 'מסננים'
+Print: הדפס
+Edit: ערוך
+Delete: מחק
+'Manage Roll Groups': 'ניהול קבוצות רול'
+'Academic Year': 'Academic Year'
+'This value cannot be changed.': 'לא ניתן לשנות ערך זה.'
+'Needs to be unique in the academic year.': 'Needs to be unique in the academic year.'
+Abbreviation: Abbreviation
+'Main Tutor': 'מורה ראשי'
+' ': ' '
+'2nd Tutor': '2nd Tutor'
+'3rd Tutor': '3rd Tutor'
+'Educational Assistant': 'עוזר חינוכי'
+'2nd Educational Assistant': '2nd Educational Assistant'
+'3rd Educational Assistant': '3rd Educational Assistant'
+'Next Roll Group': 'קבוצת רול'
+'Sets student progression on rollover.': 'הגדרת התקדמות התלמיד על הגלגול.'
+'Track Attendance': 'Track Attendance'
+'Should this class allow attendance to be taken?': 'האם מחלקה זו מאפשרת נוכחות?'
+Submit: שלח
+'Add Roll Group': 'הוסף קבוצת רול'
+'Edit Roll Group': 'ערוך קבוצת רול'
