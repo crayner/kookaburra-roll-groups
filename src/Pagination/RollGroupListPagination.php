@@ -74,7 +74,7 @@ class RollGroupListPagination  extends AbstractPaginationManager
 
         $action = new PaginationAction();
         $action->setTitle('View')
-            ->setAClass('')
+            ->setAClass('thickbox p-3 sm:p-0')
             ->setColumnClass('column p-2 sm:p-3')
             ->setSpanClass('fas fa-search-plus fa-fw fa-1-5x text-gray-700')
             ->setRoute('roll_groups__detail')
